@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #000000, #660000, #220000);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+header {
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #ff4d4d, #ff0000, #660000);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.image {
+    width: 200px; /* Durchmesser des Kreises */
+    height: 200px; /* Höhe entspricht der Breite für einen perfekten Kreis */
+    border-radius: 50%; /* Macht das Element rund */
+    border: 3px solid #ffffff; /* Weißer Rand um das Bild */
+    overflow: hidden; /* Versteckt den Teil des Bildes, der außerhalb des Kreises liegt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Optional: Schatteneffekt */
+}
+
+.image img {
+    width: auto;
+    height: 100%;
+    object-fit: cover; /* Bild füllt den Container, ohne das Seitenverhältnis zu verändern */
+    transition: transform 0.3s ease-in-out; /* Sanfter Übergang für den Hover-Effekt */
+}
+
+.image:hover img {
+    transform: scale(1.1); /* Vergrößert das Bild leicht beim Darüberfahren mit der Maus */
+}
+
+
+/* Skills Section */
+.skills {
+    margin-top: 40px;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ff4d4d, #ff0000, #660000);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+.skill-item i {
+    font-size: 2rem;
+    transition: color 0.3s;
+}
+
+.skill-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.skill-item:hover i {
+    color: #ffffff;
+}
+
+/* Progress Bars */
+progress {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #222;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background: linear-gradient(to right, #ff4d4d, #660000, #220000);
+    border-radius: 5px;
+}
+
+progress::-moz-progress-bar {
+    background: linear-gradient(to right, #ff4d4d, #660000, #220000);
+    border-radius: 5px;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-link {
+    font-size: 1.6rem;
+    margin: 0 10px;
+    color: #ffffff;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-link:hover {
+    color: #ff4d4d;
+    transform: scale(1.2);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.slide-in {
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+.projects {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 1200px;
+}
+
+.projects-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 30%; /* 3 Projekte pro Reihe */
+    min-width: 280px;
+}
+
+.project-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-item img {
+    width: 100%;
+    max-height: 300px; /* Größere Bilder */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item h3 {
+    color: #ffffff; /* Gelb aus deinem Design */
+    margin: 12px 0;
+    font-size: 1.6rem;
+}
+
+.project-item p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .project-item {
+        width: 45%; /* 2 Projekte pro Reihe bei mittelgroßen Bildschirmen */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-item {
+        width: 90%; /* 1 Projekt pro Reihe auf kleinen Bildschirmen */
+    }
+}
